@@ -1,14 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 
-const Header = () => {
-  return (
-    <View>
-      <Text>Header</Text>
-    </View>
-  )
-}
+type Props = {
+	HeaderLeft: React.FC;
+	HeaderRight: React.FC;
+};
 
-export default Header
+const Header = (props: Props) => {
+	return (
+		<View style={{ flexDirection: "row", width: "100%", paddingHorizontal: 8, justifyContent: "space-between", alignItems: "center" }}>
+			<props.HeaderLeft />
+			<props.HeaderRight />
+		</View>
+	);
+};
 
-const styles = StyleSheet.create({})
+export default Header;
+
+const styles = StyleSheet.create({});
