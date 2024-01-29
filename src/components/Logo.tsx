@@ -1,11 +1,10 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { logo } from "../assets";
 
 const Logo = () => {
 	return (
 		<Image
-			source={logo}
+			source={require("../../assets/images/logo.png")}
 			style={styles.logo}
 		/>
 	);

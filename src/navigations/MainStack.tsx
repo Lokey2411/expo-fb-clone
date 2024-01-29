@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "../screens/Home/Home";
-import Profile from "../screens/Home/Profile";
+import HomeTab from "./HomeTab";
+import Post from "../screens/Post";
+
 const Stack = createNativeStackNavigator();
 
-const HomeStack = () => {
+const MainStack = () => {
 	return (
 		<Stack.Navigator
 			screenOptions={{
@@ -13,17 +14,17 @@ const HomeStack = () => {
 			}}
 		>
 			<Stack.Screen
-				name="Home"
-				component={Home}
+				name="HomeTab"
+				component={HomeTab}
 			/>
 			<Stack.Screen
-				name="Profile"
-				component={Profile}
+				name="Post"
+				component={Post}
 			/>
 		</Stack.Navigator>
 	);
 };
 
-export default HomeStack;
+export default MainStack;
 
 const styles = StyleSheet.create({});

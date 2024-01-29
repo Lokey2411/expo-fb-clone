@@ -1,11 +1,14 @@
 import { FlatList, StyleSheet, Text, Touchable, TouchableOpacity, View } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Fontisto } from "@expo/vector-icons";
 
 const languageBox = ["English", "Vietnamese"];
 const LanguageSelectBox = () => {
 	const [language, setLanguage] = useState("English");
 	const [isOpen, setIsOpen] = useState(false);
+	useEffect(() => {
+		setIsOpen(false);
+	}, [language]);
 	return (
 		<TouchableOpacity onPress={() => setIsOpen(!isOpen)}>
 			<Text>{language}</Text>
